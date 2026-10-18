@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -35,7 +36,7 @@
 
 <header class="header" id="header">
   <div class="container">
-    <a href="index.html" class="logo" aria-label="Crescentech home"><img src="assets/logo-h.png" alt="Crescentech — There is Future in Technology" width="694" height="160"></a>
+    <a href="index.html" class="logo" aria-label="Crescentech home"><img class="logo__light" src="assets/logo-h.png" alt="Crescentech — There is Future in Technology" width="694" height="160"><img class="logo__dark" src="assets/logo-h-white.png" alt="" width="694" height="160"></a>
     <nav class="nav" id="nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
@@ -44,6 +45,10 @@
         <a href="about.html" aria-current="page">About</a>
         <a href="contact.html">Contact</a>
     </nav>
+    <button class="theme-btn" type="button" aria-label="Switch to dark mode" title="Dark / light mode">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+    </button>
     <a href="contact.html" class="btn btn--gold">Get a Quote</a>
     <button class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>

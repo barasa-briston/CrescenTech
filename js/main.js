@@ -100,6 +100,21 @@ menuBtn.addEventListener('click', () => {
   menuBtn.setAttribute('aria-expanded', open);
 });
 
+/* ---------- light / dark mode ---------- */
+const themeBtn = $('.theme-btn');
+const setThemeLabel = () => {
+  const dark = document.documentElement.dataset.theme === 'dark';
+  themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+};
+themeBtn.addEventListener('click', () => {
+  const dark = document.documentElement.dataset.theme !== 'dark';
+  if (dark) document.documentElement.dataset.theme = 'dark';
+  else delete document.documentElement.dataset.theme;
+  try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+  setThemeLabel();
+});
+setThemeLabel();
+
 /* ---------- portfolio page ---------- */
 const portfolio = $('#portfolio');
 if (portfolio) {
