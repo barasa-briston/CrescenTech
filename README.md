@@ -14,9 +14,13 @@ A static multi-page site with no build step:
 Shared styles are in `css/style.css`, scripts are in `js/main.js` and images are in `assets/`.
 
 ## Preview locally
+Page links use clean addresses (`/services`, not `services.html`), so preview with a server that supports them:
+
     cd website
-    python -m http.server 8000
-Then open http://localhost:8000
+    npx serve .
+
+Then open the address it prints (usually http://localhost:3000).
+On Vercel, `vercel.json` (`"cleanUrls": true`) serves `/services` from `services.html` and redirects old `.html` links.
 
 ## Add new portfolio work
 1. Export the image as `.webp` at about 1800px on the long side and put it in `assets/work/`.
